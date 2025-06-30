@@ -3,3 +3,18 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+getHomepage:
+    path: /
+    methods: [ GET ]
+    controller: App\Controller\LinkController::getHomepage
+
+postLink:
+    path: /
+    methods: [ POST ]
+    controller: App\Controller\LinkController::postLink
+
+getLink:
+    path: /short/{slag}
+    methods: [ GET ]
+    controller: App\Controller\LinkController::getLink

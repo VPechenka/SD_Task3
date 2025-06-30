@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Сократим все!!!
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>
+            Сокращатель ссылок
+        </h1>
+
+        <form method="POST" action="{{ path('postLink') }}">
+
+            <div class="form-group">
+                <label for="original-url">
+                    Ваша ссылка:
+                </label>
+
+                <input type="url" id="original-url" name="original-url"
+                       placeholder="Введите ссылку" required>
+            </div>
+
+            <button type="submit">
+                Добавить
+            </button>
+
+        </form>
+
+        {{ slag }}
+
+        {% if slag != '' %}
+            <div class="success-message">
+                Ваша ссылка: {{ slag }}
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}
